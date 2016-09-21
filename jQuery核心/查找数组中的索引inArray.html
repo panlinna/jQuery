@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>inArray</title>
+</head>
+<body>
+  <h2>inArray方法</h2>
+   <div id="aaron"></div>
+   点击观察结果：
+   <select id="animation">
+       <option value="1">inArray</option>
+       <option value="2">inArray</option>
+   </select>
+   <input id="exec" type="button" value="执行动画">
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+  <script>
+  $("#exec").click(function() {
+      var v = $("#animation").val();
+      var $aaron = $("#aaron");
+      $aaron.empty();
+      if(v == "1") {
+          var index = $.inArray('Aaron', ['test', 'Aaron', 'array', '慕课网']);
+          $aaron.text('Aaron的索引是: ' + index)
+      }else if (v == "2") {
+          //指定索引开始的位置
+          var index = $.inArray('a', ['a', 'b', 'c', 'd', 'a', 'c'], 2);
+          $aaron.text('a的索引是: ' + index)
+      }
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>each方法</title>
+</head>
+<body>
+  <h2>each方法</h2>
+  <div id="aaron"></div>
+  <select id="animation">
+    <option value="1">each数组</option>
+    <option value="2">each对象</option>
+  </select>
+  <input type="button" id='exec' value='执行动画'>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+  <script>
+  //jQuery遍历----each方法
+  $('#exec').click(function(){
+    var ani = $('#animation').val();
+    var $aaron = $('#aaron');
+    $aaron.empty();
+    if(ani =='1'){
+      //遍历数组元素
+      $.each(['Aaron','慕课网'],function(i,item){
+        $aaron.append('索引=' + i + '; 元素=' + item);
+      })
+    }else if(ani == '2'){
+      //遍历对象属性
+      $.each({
+        name:'Zoey',
+        age:22
+      },function(property,value){
+        //append()方法在被选定的元素结尾（同样在元素内部）插入指定内容
+        $aaron.append('属性名=' + property + '; 属性值=' + value);
+      });
+    }
+  })
+  </script>
+</body>
+</html>

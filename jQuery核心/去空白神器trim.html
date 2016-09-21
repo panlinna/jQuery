@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>trim</title>
+</head>
+<body>
+  <h2>trim方法</h2>
+
+  未处理
+  <input type="text" id='results1' value='  前后留空  '>
+  <input id="exec1" type='button' value='点击执行'>
+
+  trim处理
+  <input type="text" id='results2' value='  前后留空  '>
+  <input id="exec2" type='button' value='点击执行'>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+  <script>
+  //$.trim()是jQuery提供的函数，用于去掉字符串首尾的空白字符。
+      $('#exec1').click(function(){
+        alert('值的长度：' + $('#results1').val())
+      });
+      $('#exec2').click(function(){
+        alert('值的长度：' + $.trim($('#results2').val()))
+      })
+  </script>
+</body>
+</html>
