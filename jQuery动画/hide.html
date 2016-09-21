@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hide</title>
+  <style>
+  h2{
+    border:1px solid #ccc;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .left{
+        width: 500px;
+        height: 100px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+<body>
+    <h2>Hide</h2>
+    <div class="left">
+      <div id="a1">hide操作</div>
+      <div id="a2">hide动画操作</div>
+
+      <button>直接hide</button>
+      <button>hide动画</button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+    //点击button1直接隐藏
+        $('button:first').click(function(){
+          $('#a1').hide()
+        });
+    //点击button2 动画隐藏
+        $('button:last').click(function(){
+          $('#a2').hide({
+            duration:3000,
+            complete:function(){
+              //alert('执行3000ms后动画结束')
+              console.log('执行3000ms后动画结束')
+            }
+          });
+        });
+    </script>
+</body>
+</html>
