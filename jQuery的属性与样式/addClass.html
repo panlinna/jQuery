@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>addClass</title>
+</head>
+<body>
+  <h2>addClass</h2>
+  <div class="left">
+    <div class="aaron">
+      <p>new Class</p>
+    </div>
+    <div class="aaron">
+      <p>new Class</p>
+    </div>
+  </div>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $('.left').addClass('new Class');
+    //通过className(fucntion)方法
+        //这个函数返回一个或更多用空格隔开的要增加的样式名。
+        //接收index 参数表示元素在匹配集合中的索引位置和html 参数表示元素上原来的 HTML 内容
+        //找到所有的div，然后通过addClass设置颜色，根据返回的className的判断，
+        $(".left").addClass(function(index,className) {
+            //找到类名中包含了imooc的元素
+            if(-1 !== className.indexOf('imooc')){
+                //this指向匹配元素集合中的当前元素
+                $(this).addClass('imoocClass')
+            }
+        });
+
+
+  </script>
+</body>
+</html>
