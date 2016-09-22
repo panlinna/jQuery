@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>removeClass</title>
+</head>
+<body>
+  <h2>.removeClass()方法</h2>
+  <div class="left">
+      <div class="aaron newClass">
+          <p>newClass</p>
+      </div>
+      <div class="aaron newClass">
+          <p>newClass</p>
+      </div>
+  </div>
+  <div class="right">
+      <div class="a imoocClass">
+          <article>
+              <p>imoocClass</p>
+          </article>
+      </div>
+  </div>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+  //.removeClass() 方法允许我们指定一个函数作为参数，返回将要被删除的样式
+       $('.right > div:first').removeClass(function(index,className){
+           //className = a imoocClass
+           //把div的className赋给下一个兄弟元素div上作为它的class
+           $(this).next().addClass(className)
+           //删除自己本身的imoocClass
+           return 'imoocClass';
+       })
+  </script>
+</body>
+</html>
